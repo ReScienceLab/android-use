@@ -1,0 +1,12 @@
+android-use
+Copyright 2026 ReScienceLab
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Bundled third-party component:
+
+- skills/android-use/bin/yadb — a prebuilt dex from the YADB project
+  (https://github.com/ysbing/YADB), licensed under LGPL-3.0. It is an
+  aggregated, unmodified binary used for CJK/emoji text input; the
+  android-use sources do not derive from it. Pending: re-vendor pinned to a
+  tagged upstream release (>= v1.1.1) with checksum (see PLAN.md section 9).

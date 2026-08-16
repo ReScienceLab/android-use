@@ -202,3 +202,20 @@ boundary corrected to Android 12+.
 Upstream LightGUIAgent bugs found along the way (fix there, not here): `agent.py:310` looks
 for yadb at the wrong path so it never installs; `agent.py:529` logs a dict where
 `logger.py` expects a float.
+
+## 11. v0.1 shipped (2026-08-16)
+
+The skill migrated from `LightGUIAgent/skills/android-use/` into this repo
+(`skills/android-use/`), with LICENSE (Apache-2.0), NOTICE (yadb LGPL-3.0
+attribution), `install.sh` (symlink installer), and `.claude-plugin/plugin.json`
+(pulled forward per the tech review). Added since the field test:
+
+- `mirror [--off]`: optional live scrcpy window with the system touch indicator
+  enabled, so a human can watch the agent's taps in real time.
+- SKILL.md "Evidence for reports" workflow: distinct screenshot paths per step,
+  report composed by the host agent (deliberately no report generator in the CLI).
+  Validated end to end: a sub-agent researched cameras on Taobao and produced a
+  self-contained HTML report with 22 embedded evidence screenshots.
+
+Still open from section 9: yadb re-vendor pinned >= v1.1.1 with checksum,
+`ensure_yadb` staleness check, Android <= 11 `--clear` fallback.

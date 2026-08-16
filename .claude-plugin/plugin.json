@@ -1,0 +1,6 @@
+{
+  "name": "android-use",
+  "version": "0.1.0",
+  "description": "Control an adb-connected Android phone from a skill-capable agent: semantic UI-tree snapshots, taps, CJK text input, screenshots, app launching, and live scrcpy mirroring with visible touches.",
+  "author": { "name": "ReScienceLab" }
+}
