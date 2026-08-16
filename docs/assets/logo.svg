@@ -1,41 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024">
   <defs>
-    <clipPath id="tile"><rect width="1024" height="1024" rx="120"/></clipPath>
-    <linearGradient id="fade" gradientUnits="userSpaceOnUse"
-        x1="192" y1="192" x2="880" y2="880">
-      <stop offset="0" stop-color="#000" stop-opacity=".10"/>
+    <clipPath id="tile"><rect width="1024" height="1024"/></clipPath>
+    <linearGradient id="f">
+      <stop offset="0" stop-color="#000" stop-opacity=".12"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="f00" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="192" y1="192" x2="282" y2="282"/>
+    <linearGradient id="f01" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="352" y1="192" x2="442" y2="282"/>
+    <linearGradient id="f02" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="512" y1="192" x2="602" y2="282"/>
+    <linearGradient id="f03" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="672" y1="192" x2="762" y2="282"/>
+    <linearGradient id="f04" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="832" y1="192" x2="922" y2="282"/>
+    <linearGradient id="f10" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="192" y1="352" x2="282" y2="442"/>
+    <linearGradient id="f11" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="352" y1="352" x2="442" y2="442"/>
+    <linearGradient id="f12" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="512" y1="352" x2="602" y2="442"/>
+    <linearGradient id="f13" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="672" y1="352" x2="762" y2="442"/>
+    <linearGradient id="f14" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="832" y1="352" x2="922" y2="442"/>
+    <linearGradient id="f20" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="192" y1="512" x2="282" y2="602"/>
+    <linearGradient id="f21" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="352" y1="512" x2="442" y2="602"/>
+    <linearGradient id="f22" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="512" y1="512" x2="602" y2="602"/>
+    <linearGradient id="f23" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="672" y1="512" x2="762" y2="602"/>
+    <linearGradient id="f24" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="832" y1="512" x2="922" y2="602"/>
+    <linearGradient id="f30" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="192" y1="672" x2="282" y2="762"/>
+    <linearGradient id="f31" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="352" y1="672" x2="442" y2="762"/>
+    <linearGradient id="f32" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="512" y1="672" x2="602" y2="762"/>
+    <linearGradient id="f33" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="672" y1="672" x2="762" y2="762"/>
+    <linearGradient id="f34" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="832" y1="672" x2="922" y2="762"/>
+    <linearGradient id="f40" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="192" y1="832" x2="282" y2="922"/>
+    <linearGradient id="f41" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="352" y1="832" x2="442" y2="922"/>
+    <linearGradient id="f42" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="512" y1="832" x2="602" y2="922"/>
+    <linearGradient id="f43" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="672" y1="832" x2="762" y2="922"/>
+    <linearGradient id="f44" xlink:href="#f" gradientUnits="userSpaceOnUse" x1="832" y1="832" x2="922" y2="922"/>
   </defs>
   <g clip-path="url(#tile)">
     <rect width="1024" height="1024" fill="#0D75F4"/>
-    <g fill="url(#fade)" stroke="url(#fade)" stroke-width="60" stroke-linecap="round">
-      <line x1="192" y1="192" x2="1692" y2="1692"/>
-      <line x1="352" y1="192" x2="1852" y2="1692"/>
-      <line x1="512" y1="192" x2="2012" y2="1692"/>
-      <line x1="672" y1="192" x2="2172" y2="1692"/>
-      <line x1="832" y1="192" x2="2332" y2="1692"/>
-      <line x1="192" y1="352" x2="1692" y2="1852"/>
-      <line x1="352" y1="352" x2="1852" y2="1852"/>
-      <line x1="512" y1="352" x2="2012" y2="1852"/>
-      <line x1="672" y1="352" x2="2172" y2="1852"/>
-      <line x1="832" y1="352" x2="2332" y2="1852"/>
-      <line x1="192" y1="512" x2="1692" y2="2012"/>
-      <line x1="352" y1="512" x2="1852" y2="2012"/>
-      <line x1="512" y1="512" x2="2012" y2="2012"/>
-      <line x1="672" y1="512" x2="2172" y2="2012"/>
-      <polygon points="790.4,470.4 873.6,470.4 2373.6,1970.4 2373.6,2053.6 2290.4,2053.6 790.4,553.6"/>
-      <line x1="192" y1="672" x2="1692" y2="2172"/>
-      <line x1="352" y1="672" x2="1852" y2="2172"/>
-      <line x1="512" y1="672" x2="2012" y2="2172"/>
-      <polygon points="630.4,630.4 713.6,630.4 2213.6,2130.4 2213.6,2213.6 2130.4,2213.6 630.4,713.6"/>
-      <polygon points="790.4,630.4 873.6,630.4 2373.6,2130.4 2373.6,2213.6 2290.4,2213.6 790.4,713.6"/>
-      <line x1="192" y1="832" x2="1692" y2="2332"/>
-      <line x1="352" y1="832" x2="1852" y2="2332"/>
-      <polygon points="470.4,790.4 553.6,790.4 2053.6,2290.4 2053.6,2373.6 1970.4,2373.6 470.4,873.6"/>
-      <polygon points="630.4,790.4 713.6,790.4 2213.6,2290.4 2213.6,2373.6 2130.4,2373.6 630.4,873.6"/>
-      <polygon points="790.4,790.4 873.6,790.4 2373.6,2290.4 2373.6,2373.6 2290.4,2373.6 790.4,873.6"/>
-    </g>
+    <line stroke="url(#f00)" stroke-width="60" stroke-linecap="round" x1="192" y1="192" x2="322" y2="322"/>
+    <line stroke="url(#f01)" stroke-width="60" stroke-linecap="round" x1="352" y1="192" x2="482" y2="322"/>
+    <line stroke="url(#f02)" stroke-width="60" stroke-linecap="round" x1="512" y1="192" x2="642" y2="322"/>
+    <line stroke="url(#f03)" stroke-width="60" stroke-linecap="round" x1="672" y1="192" x2="802" y2="322"/>
+    <line stroke="url(#f04)" stroke-width="60" stroke-linecap="round" x1="832" y1="192" x2="962" y2="322"/>
+    <line stroke="url(#f10)" stroke-width="60" stroke-linecap="round" x1="192" y1="352" x2="322" y2="482"/>
+    <line stroke="url(#f11)" stroke-width="60" stroke-linecap="round" x1="352" y1="352" x2="482" y2="482"/>
+    <line stroke="url(#f12)" stroke-width="60" stroke-linecap="round" x1="512" y1="352" x2="642" y2="482"/>
+    <line stroke="url(#f13)" stroke-width="60" stroke-linecap="round" x1="672" y1="352" x2="802" y2="482"/>
+    <line stroke="url(#f14)" stroke-width="60" stroke-linecap="round" x1="832" y1="352" x2="962" y2="482"/>
+    <line stroke="url(#f20)" stroke-width="60" stroke-linecap="round" x1="192" y1="512" x2="322" y2="642"/>
+    <line stroke="url(#f21)" stroke-width="60" stroke-linecap="round" x1="352" y1="512" x2="482" y2="642"/>
+    <line stroke="url(#f22)" stroke-width="60" stroke-linecap="round" x1="512" y1="512" x2="642" y2="642"/>
+    <line stroke="url(#f23)" stroke-width="60" stroke-linecap="round" x1="672" y1="512" x2="802" y2="642"/>
+    <polygon fill="url(#f24)" points="790.4,470.4 873.6,470.4 1003.6,600.4 1003.6,683.6 920.4,683.6 790.4,553.6"/>
+    <line stroke="url(#f30)" stroke-width="60" stroke-linecap="round" x1="192" y1="672" x2="322" y2="802"/>
+    <line stroke="url(#f31)" stroke-width="60" stroke-linecap="round" x1="352" y1="672" x2="482" y2="802"/>
+    <line stroke="url(#f32)" stroke-width="60" stroke-linecap="round" x1="512" y1="672" x2="642" y2="802"/>
+    <polygon fill="url(#f33)" points="630.4,630.4 713.6,630.4 843.6,760.4 843.6,843.6 760.4,843.6 630.4,713.6"/>
+    <polygon fill="url(#f34)" points="790.4,630.4 873.6,630.4 1003.6,760.4 1003.6,843.6 920.4,843.6 790.4,713.6"/>
+    <line stroke="url(#f40)" stroke-width="60" stroke-linecap="round" x1="192" y1="832" x2="322" y2="962"/>
+    <line stroke="url(#f41)" stroke-width="60" stroke-linecap="round" x1="352" y1="832" x2="482" y2="962"/>
+    <polygon fill="url(#f42)" points="470.4,790.4 553.6,790.4 683.6,920.4 683.6,1003.6 600.4,1003.6 470.4,873.6"/>
+    <polygon fill="url(#f43)" points="630.4,790.4 713.6,790.4 843.6,920.4 843.6,1003.6 760.4,1003.6 630.4,873.6"/>
+    <polygon fill="url(#f44)" points="790.4,790.4 873.6,790.4 1003.6,920.4 1003.6,1003.6 920.4,1003.6 790.4,873.6"/>
     <g fill="#fff">
       <circle cx="192" cy="192" r="30"/>
       <circle cx="352" cy="192" r="30"/>
