@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/banner.png" alt="android-use — agent skill for driving a real Android phone" width="100%">
+</p>
+
 # android-use
 
 Control an Android phone from any skill-capable AI agent (Claude Code first): plug the
@@ -43,3 +47,7 @@ state between calls is one refmap JSON under `~/.cache/android-use`.
 
 Apache-2.0. The bundled `bin/yadb` dex is from [YADB](https://github.com/ysbing/YADB)
 (LGPL-3.0) — see [NOTICE](NOTICE).
+
+The banner image includes the Android robot, which is reproduced or modified from work
+created and shared by Google and used according to terms described in the
+[Creative Commons 3.0 Attribution License](https://creativecommons.org/licenses/by/3.0/).
