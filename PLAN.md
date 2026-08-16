@@ -158,13 +158,46 @@ server (until needed); scrcpy streaming in v0.x; on-device accessibility-service
 
 ## 9. Known defects to fix during migration (before the copy)
 
-1. **yadb multi-word text bug** (`cli.py` type path): payload passed unquoted — device-side
-   shell re-splits, only the first word is typed. Quote it (as `agent.py:205` did) and add
-   `\n`/`\t`→space preprocessing (`agent.py:196`).
+1. ~~**yadb multi-word text bug**~~ **Fixed in draft**: payload now quoted for the
+   device-side shell, `\n`/`\t`→space preprocessing added.
 2. **`ensure_yadb` staleness**: presence-only `ls` check trusts any pre-existing
    `/data/local/tmp/yadb`. Push once per process, or compare `md5sum`.
-3. `--clear` silently no-ops on Android ≤10 (`input keycombination` doesn't exist) → v0.2 fallback.
-4. Cosmetic: `snapshot` leaves `/sdcard/au-dump.xml` behind.
+3. `--clear` silently no-ops on Android ≤11 (`input keycombination` is Android 12+, not
+   11+ as first believed) → v0.2 fallback via `MOVE_END` + repeated DEL.
+4. Cosmetic: `snapshot` leaves `/sdcard/au-dump.xml` behind (tech review suggests
+   `exec-out uiautomator dump /dev/tty` to remove the temp file and a round trip).
+
+## 10. Field test results (2026-08-16, Pixel 8a + Taobao)
+
+End-to-end task (open Taobao, search for Nikon cameras, read results) **succeeded** —
+8 CLI invocations on the happy path, ~30 total including a proxy detour. Validated: CJK
+input via yadb (flawless), ref-based taps (100% accurate), screenshot-guided coordinate
+taps (first-try precision), scroll granularity (~one card row).
+
+Findings, mapped to the tech review's predictions:
+
+- **Risk #1 confirmed**: the shopping app's results page is semantically opaque — bare
+  clickable FrameLayouts with no titles/prices, or a near-empty WebView mid-load — while
+  an equivalent page rendered natively minutes earlier exposed full text (mixed
+  native/web render paths in one app). Vision fallback was mandatory to read results.
+- The predicted `could not get idle state` error never occurred, but a subtler variant
+  did: **early dumps return plausible-but-wrong bare trees** on loading screens (a
+  skeleton screen and an error page produced identical-looking trees).
+- **New finding**: apps interleave zero-width characters (U+200B) in label text, silently
+  breaking substring matching on snapshot output.
+- **New finding**: a device-wide VPN (v2RayTun) caused the shopping app's search to
+  return generic "system error" pages — server-side risk control of proxy exit IPs is
+  indistinguishable from an automation bug without a screenshot, and nothing in the skill
+  hinted at device network state as a suspect.
+- The SKILL.md `$AU` alias example broke under zsh (no word-splitting), and shell state
+  doesn't persist across host Bash calls anyway.
+
+Fixes landed in the draft skill in response: `snapshot --settle` (re-dump until stable;
+plus `--compressed` retry on dump failure), zero-width stripping, foreground activity in
+the snapshot header, `app` launch now verifies the foreground switch, `app --list`
+restricted to launchable apps, yadb quoting fix (§9.1), SKILL.md sections on in-app
+errors vs automation errors (VPN guidance) and full-command invocation, `--clear`
+boundary corrected to Android 12+.
 
 Upstream LightGUIAgent bugs found along the way (fix there, not here): `agent.py:310` looks
 for yadb at the wrong path so it never installs; `agent.py:529` logs a dict where
